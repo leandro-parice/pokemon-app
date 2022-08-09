@@ -1,0 +1,30 @@
+.paginate{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    list-style: none;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.paginate li button{
+    background-color: gray;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    opacity: 0.5;
+}
+
+.paginate li button.active{
+    background-color: #49d0b0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    opacity: 1;
+}
