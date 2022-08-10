@@ -75,27 +75,6 @@
     text-transform: capitalize;
 }
 
-.card .card-data table{
-    width: 100%;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.card .card-data table tr:nth-child(odd){
-    background-color: #f6f6f6;
-}
-
-.card .card-data table tr td{
-    padding: 5px;
-}
-
-.card .card-data table tr td:nth-child(odd){
-    font-weight: 700;
-}
-
-.card .card-data table tr td:nth-child(even){
-    text-align: right;
-}
 
 .card .card-data .types{
     display: flex;

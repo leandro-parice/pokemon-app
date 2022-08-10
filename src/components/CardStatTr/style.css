@@ -1,0 +1,30 @@
+.card-stat-tr td{
+    padding: 5px;
+    font-size: 14px;
+}
+
+.card-stat-tr .td-name{
+}
+
+.card-stat-tr .td-stat{
+    font-weight: 700;
+}
+
+.card-stat-tr .td-bar{
+}
+
+.bar-progress-inner{
+    display: inline-block;
+    width: 100%;
+    min-width: 150px;
+    overflow: hidden;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 100px;
+}
+
+.bar-progress-inner .bar-progress-bg{
+    height: 6px;
+    border-radius: 100px;
+    transition: all .4s cubic-bezier(.08,.82,.17,1) 0s;
+}

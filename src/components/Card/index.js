@@ -1,5 +1,7 @@
 import './style.css';
 
+import CardStat from '../CardStat';
+
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -48,8 +50,11 @@ const Card = (props) => {
                         </tr>                        
                     </tbody>
                 </table>
+
+                <CardStat data={pokemon.data.stats} />
+                
                 <div className="types">
-                    { pokemon.data.types.map( type => (<span>{type.type.name}</span>) ) }
+                    { pokemon.data.types.map( type => (<span key={type.type.name}>{type.type.name}</span>) ) }
                 </div>
             </div>
         </div>
