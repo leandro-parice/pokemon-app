@@ -33,7 +33,7 @@ const CardHome = ({ pokemon }) => {
 
     const handleClick = () => {
         if (data.length !== 0) {
-            dispatch({ type: 'CHANGE_POKEMON', pokemon_active: data.id, pokemon_name: pokemon.name, pokemon_image: image, pokemon_data: data });
+            dispatch({ type: 'CHANGE_POKEMON', pokemon: {active: true, data: data } });
         }
     }
 

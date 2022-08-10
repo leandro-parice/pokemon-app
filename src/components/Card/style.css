@@ -1,10 +1,10 @@
 .card{
     position: fixed;
-    top: 50%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, 10%);
     background-color: #49d0b0;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     width: calc(100vw - 30px);
     height: calc(100vh - 30px);
@@ -12,12 +12,13 @@
     opacity: 0;
     transition: all ease 0.3s;
     will-change: opacity, transform;
+    box-shadow: 0px 0px 15px 2px rgba(10,10,10,0.2);
 }
 
 .card.active{
     opacity: 1;
     pointer-events: initial;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     box-shadow: 0px 0px 15px 2px rgba(10,10,10,0.2);
 }
 
@@ -36,32 +37,83 @@
     z-index: 10000;
 }
 
-.card h2{
-    padding: 15px 15px 0;
-    color: white;
+.card .avatar{
+    background-color: white;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    margin: 10px auto 0;
+    padding: calc((110px - 96px) / 2);
+    z-index: 10002;
 }
 
-.card img{
+.card .avatar img{
     display: block;
     width: 100%;
     height: auto;
-    max-width: 250px;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 9999;
+    max-width: 96px;
 }
 
 .card .card-data{
     background-color: white;
     position: absolute;
-    top: 170px;
+    top: 100px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 130px);
     padding: 15px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    z-index: 10001;
+
+}
+
+.card .card-data h2{
+    color: #192128;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.card .card-data table{
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card .card-data table tr:nth-child(odd){
+    background-color: #f6f6f6;
+}
+
+.card .card-data table tr td{
+    padding: 5px;
+}
+
+.card .card-data table tr td:nth-child(odd){
+    font-weight: 700;
+}
+
+.card .card-data table tr td:nth-child(even){
+    text-align: right;
+}
+
+.card .card-data .types{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card .card-data .types span{
+    background-color: #f6f6f6;
+    padding: 4px 16px;
+    border-radius: 3px;
+    color: #192128;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 5px;
+}
+
+.card .card-data .types span:last-child{
+    margin-right: 0;
 }

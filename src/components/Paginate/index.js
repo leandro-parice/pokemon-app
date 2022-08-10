@@ -3,8 +3,8 @@ import './style.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Paginate = () => {
-    const previous = useSelector(state => state.previous);
-    const next = useSelector(state => state.next);
+    const previous = useSelector(state => state.pages.previous);
+    const next = useSelector(state => state.pages.next);
 
     const dispatch = useDispatch();
 

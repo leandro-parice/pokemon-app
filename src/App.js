@@ -4,12 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from './components/Card';
 import CardHome from './components/CardHome';
 import Search from './components/Search';
-import Title from './components/Title';
 import Paginate from './components/Paginate';
 
 const App = () => {
-  const url = useSelector(state => state.actual);
-  const pokemon_active = useSelector( state => state.pokemon_active);
+  const actual = useSelector(state => state.pages.actual);
+  const pokemonActive = useSelector( state => state.pokemon.active);
 
   const dispatch = useDispatch();
 
@@ -17,7 +16,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(url)
+    fetch(actual)
       .then((response) => response.json())
       .then((json) => {
         dispatch({ type: 'PAGE_PREVIOUS', previous: json.previous });
@@ -25,7 +24,7 @@ const App = () => {
         setData(json['results'])
       })
       .catch((error) => console.log(error));
-  }, [url]);
+  }, [actual]);
 
   useEffect(() => {
     if (data.length !== 0) {      
@@ -35,13 +34,11 @@ const App = () => {
   
   return (
     <div className="app">
-      <Title />
-      <Search />
       <div className="categories">
         {isLoading ? <p>Carregando...</p> : data.map(pokemon => <CardHome key={pokemon.name} pokemon={pokemon} /> )}
       </div>
       <Paginate />
-      <Card pokemon={pokemon_active} />
+      {pokemonActive ? <Card active={pokemonActive} /> : null}      
     </div>
   );
 }
