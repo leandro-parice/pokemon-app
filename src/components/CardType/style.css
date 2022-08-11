@@ -1,0 +1,22 @@
+.card-types{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.card-types span{
+    background-color: #f6f6f6;
+    padding: 4px 16px;
+    border-radius: 3px;
+    color: #192128;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 5px;
+    text-transform: capitalize;
+}
+
+.card-types span:last-child{
+    margin-right: 0;
+}

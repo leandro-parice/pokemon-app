@@ -1,9 +1,14 @@
 import './style.css';
 
-import CardStat from '../CardStat';
-
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import CardStat from '../CardStat';
+import CardData from '../CardData';
+import CardType from '../CardType';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Card = (props) => {
 
@@ -17,45 +22,31 @@ const Card = (props) => {
         setClassName('card');
         setTimeout(() => {
             dispatch({ type: 'CHANGE_POKEMON', pokemon: { active: false, data: null } });
-         }, 300);
+        }, 300);
     }
 
     useEffect(() => {
         setTimeout(() => {
             setClassName('card active');
-         }, 10);
+        }, 10);
     }, []);
 
     return (
         <div className={className}>
-            <button className="close" onClick={handleClose}>X</button>
+            <button className="close" onClick={handleClose}>
+                <FontAwesomeIcon icon={faTimes} />
+            </button>
             <div className="avatar">
                 <img src={pokemon.data.sprites.front_default} alt={pokemon.data.name} />
             </div>
-            <div className="card-data">
+            <div className="card-content">
                 <h2>{pokemon.data.name}</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Altura</td>
-                            <td>{(pokemon.data.height / 10)} m</td>
-                        </tr>
-                        <tr>
-                            <td>Peso</td>
-                            <td>{(pokemon.data.weight / 10)} kg</td>
-                        </tr>
-                        <tr>
-                            <td>Experiência básica</td>
-                            <td>{pokemon.data.base_experience}</td>
-                        </tr>                        
-                    </tbody>
-                </table>
+
+                <CardType types={pokemon.data.types} />
+
+                <CardData height={pokemon.data.height} weight={pokemon.data.weight} base_experience={pokemon.data.base_experience} />
 
                 <CardStat data={pokemon.data.stats} />
-                
-                <div className="types">
-                    { pokemon.data.types.map( type => (<span key={type.type.name}>{type.type.name}</span>) ) }
-                </div>
             </div>
         </div>
     )

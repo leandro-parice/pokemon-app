@@ -1,0 +1,14 @@
+.card-data{
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.card-data tr td:first-child{
+    font-weight: 300;
+}
+
+.card-data tr td:last-child{
+    font-weight: 700;
+    text-align: right;
+}

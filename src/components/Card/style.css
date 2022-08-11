@@ -54,7 +54,7 @@
     max-width: 96px;
 }
 
-.card .card-data{
+.card .card-content{
     background-color: white;
     position: absolute;
     top: 100px;
@@ -68,31 +68,9 @@
 
 }
 
-.card .card-data h2{
+.card .card-content h2{
     color: #192128;
     font-size: 20px;
     margin-bottom: 20px;
     text-transform: capitalize;
-}
-
-
-.card .card-data .types{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.card .card-data .types span{
-    background-color: #f6f6f6;
-    padding: 4px 16px;
-    border-radius: 3px;
-    color: #192128;
-    font-size: 14px;
-    font-weight: 300;
-    margin-right: 5px;
-}
-
-.card .card-data .types span:last-child{
-    margin-right: 0;
 }
